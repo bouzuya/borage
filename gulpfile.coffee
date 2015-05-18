@@ -53,7 +53,7 @@ gulp.task 'clean', (done) ->
 
 gulp.task 'default', ['clean', 'build']
 
-gulp.task 'test', ['build-test'], ->
+gulp.task 'test', ['build-dev', 'build-test'], ->
   gulp.src './.tmp/test/**/*.js'
   .pipe mocha()
 
