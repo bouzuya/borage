@@ -1,0 +1,27 @@
+{
+  "name": "borage",
+  "description": "A GitHub Pages deployer for bouzuya/blog.bouzuya.net",
+  "version": "1.0.0",
+  "author": {
+    "name": "bouzuya",
+    "email": "m@bouzuya.net",
+    "url": "http://bouzuya.net"
+  },
+  "bugs": {
+    "url": "https://github.com/bouzuya/borage/issues"
+  },
+  "homepage": "https://github.com/bouzuya/borage",
+  "keywords": [
+    "bouzuya",
+    "bbn"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bouzuya/borage"
+  },
+  "scripts": {
+    "test": "gulp test"
+  }
+}
