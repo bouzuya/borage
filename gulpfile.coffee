@@ -51,7 +51,13 @@ gulp.task 'clean', (done) ->
   ], done
   null
 
-gulp.task 'default', ['clean', 'build']
+gulp.task 'default', (done) ->
+  run.apply run, [
+    'clean'
+    'build'
+    done
+  ]
+  null
 
 gulp.task 'test', ['build-dev', 'build-test'], ->
   gulp.src './.tmp/test/**/*.js'
