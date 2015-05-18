@@ -44,6 +44,7 @@
   "scripts": {
     "build": "gulp build",
     "clean": "gulp clean",
+    "start": "gulp",
     "test": "gulp test",
     "watch": "gulp watch"
   }
