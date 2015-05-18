@@ -17,14 +17,14 @@ ignoreError = (stream) ->
 
 gulp.task 'build', ->
   gulp.src './src/**/*.coffee'
-  .pipe coffee()
+  .pipe coffee(bare: true)
   .pipe uglify()
   .pipe gulp.dest './lib/'
 
 gulp.task 'build-dev', ->
   gulp.src './src/**/*.coffee'
   .pipe sourcemaps.init()
-  .pipe ignoreError coffee()
+  .pipe ignoreError coffee(bare: true)
   .pipe sourcemaps.write()
   .pipe gulp.dest './.tmp/src/'
 
@@ -71,4 +71,3 @@ gulp.task 'watch', ['build-dev'], ->
       'test-dev'
       ->
     ]
-
