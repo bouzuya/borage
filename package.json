@@ -11,7 +11,8 @@
     "url": "https://github.com/bouzuya/borage/issues"
   },
   "dependencies": {
-    "es6-promise": "^2.1.1"
+    "es6-promise": "^2.1.1",
+    "moment": "^2.10.3"
   },
   "devDependencies": {
     "coffee-script": "^1.9.2",
