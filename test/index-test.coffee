@@ -14,6 +14,7 @@ describe 'borage', ->
 
   it 'works', ->
     borage
+      build: ->
       configs: [
         name: 'user.name'
         value: 'bouzuya'

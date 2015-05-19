@@ -35,6 +35,7 @@ push = ({ directory, dst, repository, src }) ->
 
 # options:
 #   branchName : branch name       'gh-pages'
+#   build      : callback
 #   configs    : configs           [{ name: 'user.name', value: 'bouzuya' }]
 #   directory  : working directory 'public'
 #   error      : stderr output     console.error.bind(console)
@@ -43,6 +44,7 @@ push = ({ directory, dst, repository, src }) ->
 #   repository : repository url    'https://github.com/bouzuya/borage'
 module.exports = (options) ->
   branchName = options.branchName ? 'gh-pages'
+  build = options.build
   configs = options.configs ? []
   directory = options.directory ? 'public'
   error = options.error ? console.error.bind(console)
@@ -57,6 +59,7 @@ module.exports = (options) ->
   .then ({ stdout, stderr }) ->
     log stdout
     error stderr
+    build()
   .then ->
     addAll { directory }
   .then ({ stdout, stderr }) ->
