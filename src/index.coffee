@@ -73,7 +73,7 @@ module.exports = (options) ->
     log stdout
     error stderr
   .then ->
-    push { repository, src, dst }
+    push { directory, dst, repository, src }
   .then ({ stdout, stderr }) ->
     log stdout
     error stderr
