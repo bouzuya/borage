@@ -42,8 +42,9 @@ getUploadFiles = (localFiles, remoteFiles) ->
     remoteFiles.every (remote) ->
       local.key isnt remote.key or local.digest isnt remote.digest
 
-uploadFiles = (files, { accessKeyId, bucketName, secretAccessKey, region }) ->
-  client = s3 { accessKeyId, secretAccessKey, region }
+uploadFiles = (
+  files, { accessKeyId, bucketName, secretAccessKey, region, verbose }) ->
+  client = s3 { accessKeyId, secretAccessKey, region, verbose }
   client.putAllObjects files, Bucket: bucketName
 
 module.exports = (pattern, options) ->
@@ -52,6 +53,7 @@ module.exports = (pattern, options) ->
   options.accessKeyId ?= process.env.AWS_ACCESS_KEY_ID # required
   options.secretAccessKey ?= process.env.AWS_SECRET_ACCESS_KEY # required
   options.region ?= process.env.AWS_REGION ? 'ap-northeast-1'
+  options.verbose ?= false
 
   localFiles = []
   remoteFiles = []

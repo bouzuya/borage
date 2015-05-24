@@ -17,10 +17,11 @@ class MyS3
       options.Marker = data.NextMarker || contents[contents.length - 1].Key
       @listAllObjects options, result
 
-  putAllObjects: (files, { Bucket }) ->
+  putAllObjects: (files, { Bucket, verbose }) ->
     files.reduce (promise, { key, path }) =>
       promise
       .then =>
+        console.log("upload #{path} to #{Bucket}/#{key}") if verbose
         @_putObject
           Bucket: Bucket
           Key: key
