@@ -18,14 +18,14 @@ class MyS3
       @listAllObjects options, result
 
   putAllObjects: (files, { Bucket }) ->
-    files.reduce (promise, file) =>
+    files.reduce (promise, { key, path }) =>
       promise
       .then =>
         @_putObject
           Bucket: Bucket
-          Key: file.key
-          Body: fs.readFileSync file.path
-          ContentType: mime.lookup file.path
+          Key: key
+          Body: fs.readFileSync path
+          ContentType: mime.lookup path
     , Promise.resolve()
 
   _putObject: (options) ->
