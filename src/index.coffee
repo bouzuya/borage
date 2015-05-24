@@ -18,7 +18,7 @@ getLocalFiles = (pattern, { root }) ->
       return reject(err) if err?
       localFiles = files.reduce (results, i) ->
         results.concat [
-          key: '/' + path.relative(root, i)
+          key: path.relative(root, i)
           path: path.resolve(i)
         ]
       , []
