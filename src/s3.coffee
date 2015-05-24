@@ -6,6 +6,7 @@ mime = require 'mime'
 class MyS3
   constructor: (options) ->
     options.apiVersion = '2006-03-01'
+    @_verbose = options.verbose ? false
     @_client = new S3 options
 
   listAllObjects: (options, result = []) ->
@@ -21,7 +22,7 @@ class MyS3
     files.reduce (promise, { key, path }) =>
       promise
       .then =>
-        console.log("upload #{path} to #{Bucket}/#{key}") if verbose
+        console.log("upload #{path} to #{Bucket}/#{key}") if @_verbose
         @_putObject
           Bucket: Bucket
           Key: key
