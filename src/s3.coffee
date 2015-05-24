@@ -26,7 +26,7 @@ class MyS3
           Key: file.key
           Body: fs.readFileSync file.path
           ContentType: mime.lookup file.path
-    , Promise.resovle()
+    , Promise.resolve()
 
   _putObject: (options) ->
     new Promise (resolve, reject) =>
