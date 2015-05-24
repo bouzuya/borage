@@ -22,7 +22,7 @@ class MyS3
     files.reduce (promise, { key, path }) =>
       promise
       .then =>
-        console.log("upload #{path} to #{Bucket}/#{key}") if @_verbose
+        console.log("upload #{path} to s3://#{Bucket}/#{key}") if @_verbose
         @_putObject
           Bucket: Bucket
           Key: key
