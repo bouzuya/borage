@@ -11,15 +11,15 @@ digest = (content) ->
   md5.digest 'hex'
 
 # Array<{ key:string, path:string, digest:string }>
-getLocalFiles = (pattern, { cwd }) ->
+getLocalFiles = (pattern, { root }) ->
   # files: [{ cwd: '', src: ['key', ...] }, ...]
   new Promise (resolve, reject) ->
-    glob pattern, { cwd }, (err, files) ->
+    glob pattern, (err, files) ->
       return reject(err) if err?
       localFiles = files.reduce (results, i) ->
         results.concat [
-          key: '/' + path.relative(cwd, i)
-          path: path.join(cwd, i)
+          key: '/' + path.relative(root, i)
+          path: path.resolve(i)
         ]
       , []
       .filter (i) ->
@@ -47,7 +47,7 @@ uploadFiles = (files, { accessKeyId, bucketName, secretAccessKey, region }) ->
   client.putAllObjects files, Bucket: bucketName
 
 module.exports = (pattern, options) ->
-  options.cwd ?= process.cwd()
+  options.root ?= process.cwd()
   options.bucketName ?= null # required
   options.accessKeyId ?= process.env.AWS_ACCESS_KEY_ID # required
   options.secretAccessKey ?= process.env.AWS_SECRET_ACCESS_KEY # required
@@ -58,7 +58,7 @@ module.exports = (pattern, options) ->
   toUploadFiles = []
 
   Promise.resolve()
-  .then -> getLocalFiles pattern, { cwd: options.cwd }
+  .then -> getLocalFiles pattern, { root: options.root }
   .then (files) -> localFiles = files
   .then -> getRemoteFiles options
   .then (files) -> remoteFiles = files
