@@ -1,6 +1,6 @@
 # borage
 
-GitHub Pages deployer for [bouzuya/blog.bouzuya.net][]
+A deployer for [bouzuya/blog.bouzuya.net][].
 
 ## Installation
 
@@ -12,7 +12,8 @@ or
 
 ## Related Project
 
-- [bouzuya/kraken][]
+- [bouzuya/grunt-tentacles][] ... A Grunt plugin for uploading files to Amazon S3. It was used by [bouzuya/blog.bouzuya.net][] 2.x .
+- [bouzuya/kraken][] ... A JSON generator for [bouzuya/blog.bouzuya.net][].
 
 ## License
 
@@ -26,4 +27,5 @@ or
 [email]: mailto:m@bouzuya.net
 [url]: http://bouzuya.net
 [bouzuya/blog.bouzuya.net]: https://github.com/bouzuya/blog.bouzuya.net
+[bouzuya/grunt-tentacles]: https://github.com/bouzuya/grunt-tentacles
 [bouzuya/kraken]: https://github.com/bouzuya/kraken
