@@ -10,12 +10,6 @@ digest = (content) ->
   md5.update content
   md5.digest 'hex'
 
-newS3Client = (options) ->
-  options = {}
-  options[k] = v for k, v of options
-  options.apiVersion = '2006-03-01'
-  new S3 options
-
 # Array<{ key:string, path:string, digest:string }>
 getLocalFiles = (pattern, { cwd }) ->
   # files: [{ cwd: '', src: ['key', ...] }, ...]
