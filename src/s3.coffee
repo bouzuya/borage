@@ -28,17 +28,17 @@ class MyS3
           ContentType: mime.lookup path
     , Promise.resolve()
 
-  _putObject: (options) ->
-    new Promise (resolve, reject) =>
-      @_client.putObject options, (err) ->
-        return reject(err) if err?
-        resolve()
-
   _listObjects: (options) ->
     new Promise (resolve, reject) =>
       @_client.listObjects options, (err, data) ->
         return reject(err) if err?
         resolve data
+
+  _putObject: (options) ->
+    new Promise (resolve, reject) =>
+      @_client.putObject options, (err) ->
+        return reject(err) if err?
+        resolve()
 
 module.exports = (options) ->
   new MyS3 options
