@@ -1,6 +1,8 @@
 # borage
 
-A deployer for [bouzuya/blog.bouzuya.net][].
+A deployer for [blog.bouzuya.net](http://blog.bouzuya.net).
+
+See: [bouzuya/blog.bouzuya.net][]
 
 ## Installation
 
@@ -9,11 +11,6 @@ A deployer for [bouzuya/blog.bouzuya.net][].
 or
 
     $ npm install https://github.com/bouzuya/borage/archive/{VERSION}.tar.gz
-
-## Related Project
-
-- [bouzuya/grunt-tentacles][] ... A Grunt plugin for uploading files to Amazon S3. It was used by [bouzuya/blog.bouzuya.net][] 2.x .
-- [bouzuya/kraken][] ... A JSON generator for [bouzuya/blog.bouzuya.net][].
 
 ## License
 
