@@ -1,6 +1,6 @@
-# borage
+![borage logo](https://cloud.githubusercontent.com/assets/1221346/17835500/a6087528-67aa-11e6-9370-9f16dd9988b0.png)
 
-A deployer for [blog.bouzuya.net](http://blog.bouzuya.net).
+borage is a deployer for [blog.bouzuya.net](http://blog.bouzuya.net).
 
 See: [bouzuya/blog.bouzuya.net][]
 
