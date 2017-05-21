@@ -6,11 +6,7 @@ See: [bouzuya/blog.bouzuya.net][]
 
 ## Installation
 
-    $ npm install https://github.com/bouzuya/borage/archive/master.tar.gz
-
-or
-
-    $ npm install https://github.com/bouzuya/borage/archive/{VERSION}.tar.gz
+    $ npm install @bouzuya/borage
 
 ## License
 
