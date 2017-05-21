@@ -1,5 +1,5 @@
 {
-  "name": "borage",
+  "name": "@bouzuya/borage",
   "description": "A GitHub Pages deployer for bouzuya/blog.bouzuya.net",
   "version": "3.1.2",
   "author": {
